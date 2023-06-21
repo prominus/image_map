@@ -1,61 +1,74 @@
-// #![allow(unused)]
-// #![allow(dead_code)]
+// use std::thread;
+// use std::sync::{Arc, Mutex};
 
+mod shared;
 
-use std::collections::VecDeque;
-use std::thread;
-use std::sync::{Arc, Mutex};
+use crate::shared::json_extractor;
+use crate::shared::pdf_extractor;
 
 fn main() {
 
-    // a dummy memory item to be read in
-    let numbers: Vec<u32> = (1..=100).collect();
+    let file_path = "C:\\Users\\Magenta\\Documents\\rust_webassembly\\image_map\\input\\PZO7105E.pdf";
+    let schema_path = "C:\\Users\\Magenta\\Documents\\rust_webassembly\\image_map\\schema\\starfinder_alien_archive_1.json";
+
+    let schema = json_extractor::read_doc_from_file(schema_path);
+    println!("x");
+
+    // let (_, images) = pdf_extractor::get_document(file_path);
+    // let folder_path = "output/alien_archive_1";
+    // // let folder_path = "output/alien_archive1";
+    // pdf_extractor::write_to_output(folder_path, images);
     
-    // The top level queue.
-    let queue: VecDeque<u32> = VecDeque::with_capacity(numbers.capacity());
 
-    // Provide ownership of queue between the readers and writers
-    let w_queue_ref = Arc::new(Mutex::new(queue));
-    let r_queue_ref = Arc::clone(&w_queue_ref);
+    // // a dummy memory item to be read in
+    // let numbers: Vec<u32> = (1..=100).collect();
+    
+    // // The top level stack
+    // let stack: Vec<u32> = Vec::with_capacity(numbers.capacity());
 
-    // Provide ownership of a cancellation token flag between readers and writers
-    let w_cancellation_token = Arc::new(Mutex::new(false));
-    let r_cancellation_token = Arc::clone(&w_cancellation_token);
+    // // Provide ownership of stack between the readers and writers
+    // let w_stack_ref = Arc::new(Mutex::new(stack));
+    // let r_stack_ref = Arc::clone(&w_stack_ref);
 
-    let writer = thread::spawn(move || {
-        // Iteratively 'write' incoming buffer to the queue
-        for n in numbers {
-            let mut w = w_queue_ref.lock().unwrap();
-            // will be a debut line
-            println!("Pushing value of {}", n);
-            w.push_back(n);
-        }
-        // When iteration is complete set the cancellation token
-        let mut ct = w_cancellation_token.lock().unwrap();
-        *ct = true;
-    });
+    // // Provide ownership of a cancellation token flag between readers and writers
+    // let w_cancellation_token = Arc::new(Mutex::new(false));
+    // let r_cancellation_token = Arc::clone(&w_cancellation_token);
 
-    let reader = thread::spawn(move || {
-        // Infinitely check for new items in queue.
-        // Breaks out only when cancellation token is set and queue is empty.
-        loop {
-            let mut r = r_queue_ref.lock().unwrap();
-            match r.pop_front() {
-                Some(i) => { 
-                    // Right now we are just printing what we read
-                    println!("Read value of {}", i);
-                },
-                None => {
-                    let ct = r_cancellation_token.lock().unwrap();
-                    if *ct == true {
-                        // Will only be hit once the writer thread has raised the cancellation.
-                        break;
-                    }
-                },
-            }
-        }
-    });
+    // let writer = thread::spawn(move || {
+    //     // Iteratively 'write' incoming buffer to the stack
+    //     for n in numbers {
+    //         let mut w = w_stack_ref.lock().unwrap();
+    //         // will be a debut line
+    //         println!("Pushing value of {}", n);
+    //         w.push(n);
+    //     }
+    //     // When iteration is complete set the cancellation token
+    //     let mut ct = w_cancellation_token.lock().unwrap();
+    //     *ct = true;
+    // });
 
-    reader.join().unwrap();
-    writer.join().unwrap();
+    // let reader = thread::spawn(move || {
+    //     // Infinitely check for new items in stack.
+    //     // Breaks out only when cancellation token is set and the stack is empty.
+    //     loop {
+    //         let mut r = r_stack_ref.lock().unwrap();
+    //         // Ordering for my use case is not important
+    //         match r.pop() {
+    //             Some(i) => { 
+    //                 // Right now we are just printing what we read
+    //                 println!("Read value of {}", i);
+    //             },
+    //             None => {
+    //                 let ct = r_cancellation_token.lock().unwrap();
+    //                 if *ct == true {
+    //                     // Will only be hit once the writer thread has raised the cancellation.
+    //                     break;
+    //                 }
+    //             },
+    //         }
+    //     }
+    // });
+
+    // reader.join().unwrap();
+    // writer.join().unwrap();
 }

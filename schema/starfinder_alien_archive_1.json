@@ -1,0 +1,422 @@
+{
+    "title": "PZ07105E.pdf",
+    "author": "Copyright 2017 Paizo Inc.",
+    "creation_date": "D:20170808175333-07'-00'",
+    "npc2": {
+        "Aeon Guard": {
+            "id": "WZvgJseACvlCNqrT",
+            "full": 19,
+            "icon": 21
+        },
+        "Ahav": {
+            "id": "FTn1x9aRTBNAq5Kq",
+            "full": 23,
+            "icon": 24
+        },
+        "Anacite Laborer": {
+            "id": "QdINalLf6rRRL8OS",
+            "full": 28,
+            "icon": 28
+        },
+        "Anacite Wingbot": {
+            "id": "oCTQI68v9Alt2pfP",
+            "full": 29,
+            "icon": 29
+        },
+        "Barachius": {
+            "id": "tdFDm4Hw5sdtjPId",
+            "full": 31,
+            "icon": 33
+        },
+        "Apari": {
+            "id": "mpchkkvbiKHoLdto",
+            "full": 36,
+            "icon": 38
+        },
+        "Apari Constituent": {
+            "id": "ijWFbXqDk7sqKN5T",
+            "full": 40,
+            "icon": 40
+        },
+        "Assembly Ooze": {
+            "id": "zjktKO2wLiLrAsyY",
+            "full": 41,
+            "icon": 44
+        },
+        "Asteray": {
+            "id": "Ntsjeawqk6QzSlOE",
+            "full": 46,
+            "icon": 46
+        },
+        "Barathu": {
+            "id": "tM35G3YiwebUP7qb",
+            "full": 51,
+            "icon": 52
+        },
+        "Barathu (Early Stage)": {
+            "id": "hxQsdQUyjDEFHO0i",
+            "full": 51,
+            "icon": 52
+        },
+        "Bloodbrother": {
+            "id": "MjO5gIWQAbjsVCGp",
+            "full": 54,
+            "icon": 56
+        },
+        "Bryrvath": {
+            "id": "7FZHTF7AnSiRmgVO",
+            "full": 58,
+            "icon": 60
+        },
+        "Caypin": {
+            "id": "Nk06Qs43IKHAKz3H",
+            "full": 62,
+            "icon": 64
+        },
+        "Contemplative": {
+            "id": "UDM8QKhEOIUnaEj7",
+            "full": 67,
+            "icon": 65
+        },
+        "Contemplative Mentor": {
+            "id": "t6h5sj3nM7OVRfaM",
+            "full": 67,
+            "icon": 65
+        },
+        "Crest-Eater": {
+            "id": "PaKThmRGLYWWX2bC",
+            "full": 70,
+            "icon": 73
+        },
+        "Deh-Nolo": {
+            "id": "4l9FGozKp56cDILa",
+            "full": 75,
+            "icon": 76
+        },
+        "Devil, Endbringer Devil (Dhalochar)": {
+            "id": "NGfNlBJ8MUjkwDFB",
+            "full": 78,
+            "icon": 79
+        },
+        "Draelik": {
+            "id": "RIprzWBQsM77aJqB",
+            "full": 84,
+            "icon": 84
+        },
+        "Dragon (Chromatic), Young Adult Blue Dragon": {
+            "id": "bIMg9b9x1df3xrc5",
+            "full": 88,
+            "icon": 90
+        },
+        "Dragonkin": {
+            "id": "EWYDjeqj2wKrSlRf",
+            "full": 91,
+            "icon": 94
+        },
+        "Drow, Drow Enforcer": {
+            "id": "IDdI8ud0W2H6Zwtq",
+            "full": 98,
+            "icon": 104
+        },
+        "Drow, Drow Noble Arms Dealer": {
+            "id": "vd2ir0oiOm468fHd",
+            "full": 105,
+            "icon": 105
+        },
+        "Electrovore": {
+            "id": "7RvBrqrxj0lU8HDn",
+            "full": 107,
+            "icon": 107
+        },
+        "Elemental, Tiny Elemental": {
+            "id": "1wFa1VLmqsIRYzts",
+            "full": 111,
+            "icon": 113
+        },
+        "Ellicoth": {
+            "id": "cOnSbV6DtFw0cMVZ",
+            "full": 116,
+            "icon": 118
+        },
+        "Formian Worker": {
+            "id": "jDiSlxkeRmHB7KVl",
+            "full": 122,
+            "icon": 122
+        },
+        "Formian Warrior": {
+            "id": "Zo1eabjvHjbxKLhV",
+            "full": 122,
+            "icon": 122
+        },
+        "Frujai Colony": {
+            "id": "D1yOmDSe3AvfgmeT",
+            "full": 128,
+            "icon": 131
+        },
+        "Frujai Soldier": {
+            "id": "QKApkamFbqDOvlFw",
+            "full": 132,
+            "icon": 132
+        },
+        "Goblin Zaperator, Space": {
+            "id": "rYqcQSfW9JNZvrgu",
+            "full": 134,
+            "icon": 137
+        },
+        "Goblin Honchohead, Space": {
+            "id": "o2yiClN2r7hePI1r",
+            "full": 134,
+            "icon": 137
+        },
+        "Gray": {
+            "id": "iGyssnNyuKkLUoe3",
+            "full": 139,
+            "icon": 141
+        },
+        "Haan": {
+            "id": "JGy9KPW4TDCVGVRm",
+            "full": 143,
+            "icon": 147
+        },
+        "Haan Combat Pilot": {
+            "id": "ATVLMtL1ytPHWA5Q",
+            "full": 145,
+            "icon": 145
+        },
+        "Hallajin": {
+            "id": "5VTsS5lNTvOi9Qm1",
+            "full": 150,
+            "icon": 152
+        },
+        "Hesper": {
+            "id": "LxY10hWgykJ1mHPR",
+            "full": 158,
+            "icon": 159
+        },
+        "Ikeshti Brood-Minder": {
+            "id": "qorX15hHEV5fnEmR",
+            "full": 162,
+            "icon": 163
+        },
+        "Ikeshti Rivener": {
+            "id": "pbG9jF39GJMJNAVI",
+            "full": 166,
+            "icon": 163
+        },
+        "Inevitable, Anhamut": {
+            "id": "ZKgodvTA0JrdvAw2",
+            "full": 168,
+            "icon": 171
+        },
+        "Kalo Sharkhunter": {
+            "id": "lYX7TqpyqYGuEseQ",
+            "full": 174,
+            "icon": 174
+        },
+        "Kalo Deepspeaker": {
+            "id": "o8ROezUgr2CPYuse",
+            "full": 180,
+            "icon": 179
+        },
+        "Ksarik": {
+            "id": "cotdeRcSwXSWmRnz",
+            "full": 181,
+            "icon": 183
+        },
+        "Kyokor": {
+            "id": "OskZ4ZdcAm3Mky2k",
+            "full": 187,
+            "icon": 190
+        },
+        "Maraquoi Hunter": {
+            "id": "nwBkawW3ovzllcw8",
+            "full": 191,
+            "icon": 194
+        },
+        "Maraquoi Shaman": {
+            "id": "z1UoKhNtCSHMdYH6",
+            "full": 196,
+            "icon": 196
+        },
+        "Marooned One": {
+            "id": "9oyzluBAgOQVTkdU",
+            "full": 199,
+            "icon": 199
+        },
+        "Mountain Eel": {
+            "id": "Mr6efnQ3BwDjRXd6",
+            "full": 201,
+            "icon": 204
+        },
+        "Necrovite": {
+            "id": "ljSw5nhGM96SAqpw",
+            "full": 208,
+            "icon": 208
+        },
+        "Nihili": {
+            "id": "1HX0TcrpW7wsPHG1",
+            "full": 211,
+            "icon": 212
+        },
+        "Nihili Captain": {
+            "id": "J5pekj8xf6gFexm8",
+            "full": 211,
+            "icon": 212
+        },
+        "Nuar Enforcer": {
+            "id": "K9j2qI3vSHyBDTaw",
+            "full": 218,
+            "icon": 223
+        },
+        "Nuar Specialist": {
+            "id": "VAP4WgYWhIVjrZ95",
+            "full": 218,
+            "icon": 223
+        },
+        "Oma": {
+            "id": "UJdN6AgYHWhq7o7S",
+            "full": 225,
+            "icon": 228
+        },
+        "Orocoran": {
+            "id": "qf76Avpdu38Ogwf9",
+            "full": 231,
+            "icon": 234
+        },
+        "Orocoran Ichor Lord": {
+            "id": "68Zh2g0gInpBEmdh",
+            "full": 233,
+            "icon": 233
+        },
+        "Reptoid": {
+            "id": "4qnbAsjt5tYVJ3PQ",
+            "full": 240,
+            "icon": 240
+        },
+        "Reptoid Master": {
+            "id": "ObcDKO4FCjAq6CrG",
+            "full": 236,
+            "icon": 239
+        },
+        "Robot (Security), Patrol-Class": {
+            "id": "DWUaxunk0vwLCmQ8",
+            "full": 244,
+            "icon": 244
+        },
+        "Robot (Security), Observer-Class": {
+            "id": "oqthkU2Ix5TLLWHt",
+            "full": 243,
+            "icon": 246
+        },
+        "Ryphorian Technician": {
+            "id": "dip7t11VYLzcu19k",
+            "full": 249,
+            "icon": 251
+        },
+        "Ryphorian Skyfire Pilot": {
+            "id": "XFBxFNz0W1LT7ONr",
+            "full": 252,
+            "icon": 252
+        },
+        "Sarcesian Sniper": {
+            "id": "eaFja8SMFehmeRWK",
+            "full": 254,
+            "icon": 259
+        },
+        "Sarcesian Cybercommando": {
+            "id": "hPoSxp2DVmtBqdag",
+            "full": 254,
+            "icon": 259
+        },
+        "Scavenger Slime": {
+            "id": "J93HimYHpTa3qFVu",
+            "full": 260,
+            "icon": 264
+        },
+        "Sharpwing": {
+            "id": "R1B6IJ7A9PKWRbfM",
+            "full": 266,
+            "icon": 269
+        },
+        "Shobhad": {
+            "id": "WBwkX9oEraWtEQzs",
+            "full": 271,
+            "icon": 277
+        },
+        "Shobhad Warleader": {
+            "id": "YgIEtjj2hEErVfwL",
+            "full": 271,
+            "icon": 277
+        },
+        "Skittermander Whelp": {
+            "id": "xir7197v8MgibmU9",
+            "full": 278,
+            "icon": 278
+        },
+        "Skittermander": {
+            "id": "p1G9Jk04tqB4cI1X",
+            "full": 280,
+            "icon": 281
+        },
+        "Surnoch": {
+            "id": "pdmOr9NEQHgYJDFK",
+            "full": 283,
+            "icon": 286
+        },
+        "The Swarm, Corrovox": {
+            "id": "2qbiJSmMCDVdaRrR",
+            "full": 287,
+            "icon": 289
+        },
+        "The Swarm, Thresher Lord": {
+            "id": "SEPRMVRjQlBTGdnj",
+            "full": 290,
+            "icon": 290
+        },
+        "Symbiend": {
+            "id": "CO2YirHMuhfZgEDK",
+            "full": 292,
+            "icon": 294
+        },
+        "Damoritosh's Arm Host": {
+            "id": "LP6hXmgEC0WG94K9",
+            "full": 295,
+            "icon": 295
+        },
+        "Undead Minion, Cybernetic Zombie": {
+            "id": "Lm6T2ReFaBXLoXbB",
+            "full": 297,
+            "icon": 299
+        },
+        "Urog": {
+            "id": "JbEglOaLQboHa0TG",
+            "full": 300,
+            "icon": 305
+        },
+        "Verthani Aether Pilot": {
+            "id": "oYtsrRPplxH4Zl34",
+            "full": 311,
+            "icon": 311
+        },
+        "Verthani Pure One": {
+            "id": "vHkWZbvEzuJRnJGp",
+            "full": 309,
+            "icon": 313
+        },
+        "Void Hag": {
+            "id": "jqjSEiKtCg5rZwuP",
+            "full": 315,
+            "icon": 317
+        },
+        "Witchwyrd": {
+            "id": "DxpOpmviBiLLNN2U",
+            "full": 319,
+            "icon": 322
+        },
+        "Wrikreechee": {
+            "id": "lrnpQylZEgTvDZqE",
+            "full": 323,
+            "icon": 325
+        }
+    }
+}
