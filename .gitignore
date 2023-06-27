@@ -1,4 +1,4 @@
-target
-output
+node_modules
+dist
 input
-test
+output
