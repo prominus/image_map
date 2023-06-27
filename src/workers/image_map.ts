@@ -1,5 +1,13 @@
 export default class ImageMap {
+    
     public bytes: number;
+    /**
+     * 
+     * @param name - The image name as defined in the PDF
+     * @param width - Pixel width of the raw image
+     * @param height - Pixel height of the raw image
+     * @param data - The raw image data extracted from the PDF
+     */
     constructor(
         public name: string,
         public width: number,
@@ -10,7 +18,7 @@ export default class ImageMap {
     }
 
     /**
-     * channels
+     * Return the channel to use in generating a Raw image
      */
     public channels() {
         let channels: 1 | 2 | 3 | 4 = 1;
