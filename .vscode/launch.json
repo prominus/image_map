@@ -17,8 +17,7 @@
             ],
             "sourceMaps": true,
             "console": "integratedTerminal",
-            "internalConsoleOptions": "neverOpen",
-            "preLaunchTask": "npm: build"
+            "internalConsoleOptions": "neverOpen"
         }
     ]
 }

@@ -1,8 +1,11 @@
-import pkg, { PDFDocumentProxy, PDFPageProxy } from "pdfjs-dist/legacy/build/pdf.js";
-const { getDocument, OPS } = pkg;
-import Path from "path";
+import { PDFDocumentProxy, PDFPageProxy, getDocument, OPS, GlobalWorkerOptions } from "pdfjs-dist";
+// const { getDocument, OPS } = pkg;
 import sharp from "sharp";
-import ImageMap from "./image_map.js";
+import ImageMap from "./image_map";
+
+// Setting worker path to worker bundle.
+GlobalWorkerOptions.workerSrc =
+  "./node_modules/pdfjs-dist/build/pdf.worker.js";
 
 // Props to mablay for having a project to demonstrate the capability of pdfjs in a straightforward way!
 // Here was their project: https://github.com/mablay/pdf-export-images/tree/main
@@ -74,7 +77,7 @@ async function getPageImages(pageNum: number, pdf: PDFDocumentProxy) {
  */
 export async function printAllImages(outputFolder: string, images: ImageMap[]) {
     images.forEach(async (image: ImageMap) => {
-        const file = Path.join(outputFolder, `${image.name}.png`);
+        const file = outputFolder + `/${image.name}.png`;
         const width = image.width;
         const height = image.height;
         const channels = image.channels();
