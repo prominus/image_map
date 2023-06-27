@@ -1,15 +1,15 @@
 const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
+const TerserPlugin = require("terser-webpack-plugin");
 const path = require('path');
 
 module.exports = {
     entry: {
-        main: './src/index.ts',
-        image_map: './src/workers/image_map.ts',
-        pdf_extractor: './src/workers/pdf_extractor.ts',
+        main: './src/index.ts'
     },
     target: 'node',
-    mode: 'development',
+    mode: 'none',
     devtool: 'inline-source-map',
+    // Fix for using sharp in this webpack
     externals: ['node_modules', {
         'sharp': 'commonjs sharp'
     }],
@@ -31,8 +31,9 @@ module.exports = {
         ],
     },
     optimization: {
+        minimizer: true,
         minimizer: [
-            "...",
+            new TerserPlugin(),
             new ImageMinimizerPlugin({
                 minimizer: {
                     implementation: ImageMinimizerPlugin.sharpMinify,

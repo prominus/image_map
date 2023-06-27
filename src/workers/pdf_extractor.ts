@@ -1,14 +1,11 @@
 import { PDFDocumentProxy, PDFPageProxy, getDocument, OPS, GlobalWorkerOptions } from "pdfjs-dist";
-// const { getDocument, OPS } = pkg;
 import sharp from "sharp";
 import ImageMap from "./image_map";
 
 // Setting worker path to worker bundle.
+// Do not have webpack try to bundle with project. This just causes errors
 GlobalWorkerOptions.workerSrc =
-  "./node_modules/pdfjs-dist/build/pdf.worker.js";
-
-// Props to mablay for having a project to demonstrate the capability of pdfjs in a straightforward way!
-// Here was their project: https://github.com/mablay/pdf-export-images/tree/main
+  "../node_modules/pdfjs-dist/build/pdf.worker.js";
 
 /**
  * Extract all images from a PDF
