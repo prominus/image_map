@@ -1,5 +1,5 @@
-import pkg from "pdfjs-dist/legacy/build/pdf.js";
-const { getDocument, OPS } = pkg;
+import pkg, { PDFDocumentProxy} from "pdfjs-dist/legacy/build/pdf.js";
+const { getDocument, OPS} = pkg;
 import sharp from "sharp";
 import Path from "path";
 import { fileURLToPath } from "url";
@@ -27,7 +27,7 @@ async function main() {
 
 }
 
-async function getPageImages(pageNum, pdf) {
+async function getPageImages(pageNum: number, pdf: PDFDocumentProxy) {
   try {
     const pdfPage = await pdf.getPage(pageNum);
     const operatorList = await pdfPage.getOperatorList();
@@ -44,12 +44,13 @@ async function getPageImages(pageNum, pdf) {
           const imageName = operatorList.argsArray[idx][0];
           console.log('page', pageNum, 'imageName', imageName);
 
-          pdfPage.objs.get(imageName, async (image) => {
-            const { width, height, kind } = image;
+          pdfPage.objs.get(imageName, async (image: any) => {
+            const { width, height, _kind } = image;
             const bytes = image.data.length;
             const channels = bytes / width / height;
             const file = Path.join(__dirname, '..', 'output', `${imageName}.png`)
             await sharp(image.data, {
+              // @ts-ignore
               raw: { width, height, channels }
             }).toFile(file);
             // console.log('canvas > toDataURL', canvas.toDataURL());

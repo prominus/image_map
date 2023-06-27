@@ -9,9 +9,10 @@
             "name": "Launch NodeJS Server",
             "type": "node",
             "request": "launch",
-            "program": "${workspaceFolder}/src/index.js",
+            "program": "${workspaceFolder}/src/index.ts",
             "cwd": "${workspaceFolder}",
             "outFiles": [
+                "${workspaceFolder}/dist/**/*.js",
                 "!**/node_modules/**"
             ],
             "sourceMaps": true,
