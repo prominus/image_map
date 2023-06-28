@@ -2,30 +2,46 @@ import { PDFDocumentProxy, PDFPageProxy, getDocument, OPS, GlobalWorkerOptions }
 import sharp from "sharp";
 import ImageMap from "./image_map";
 
+class PdfData{
+    public images: ImageMap[];
+    constructor(
+        public title: string,
+        public author: string,
+        public creationDate: string,
+    ) {
+        this.images = [];
+    }
+}
+
 // Setting worker path to worker bundle.
 // Do not have webpack try to bundle with project. This just causes errors
 GlobalWorkerOptions.workerSrc =
   "../node_modules/pdfjs-dist/build/pdf.worker.js";
 
 /**
- * Extract all images from a PDF
+ * Extract all images and metadata from a PDF
  * 
  * @param path - Absolute file path to PDF
- * @returns A promised list of images from the PDF 
+ * @returns A promised list of images and metadata from the PDF 
  */
-export default async function extractAllImages(path: string): Promise<ImageMap[]> {
+export default async function getPdfDafa(path: string) {
     let pdf: PDFDocumentProxy = await getDocument(path).promise;
 
+    const metadata = await pdf.getMetadata();
+    let pdf_data = new PdfData(
+        (metadata.info as any)['Title'],
+        (metadata.info as any)['Author'],
+        (metadata.info as any)['CreationDate']
+    );
     const totalNumPages = pdf.numPages;
-    const pagesPromises = [];
 
     // Iterate over all pages and push images to pagePromises
     for (let currentPage = 1; currentPage <= totalNumPages; currentPage += 1) {
         const images = getPageImages(currentPage, pdf);
-        pagesPromises.push(...await images);
+        pdf_data.images.push(...await images);
     }
 
-    return await Promise.all(pagesPromises);
+    return await pdf_data;
 }
 
 /**

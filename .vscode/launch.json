@@ -18,7 +18,11 @@
             "sourceMaps": true,
             "console": "integratedTerminal",
             "internalConsoleOptions": "neverOpen",
-            "preLaunchTask": "npm: build"
+            "preLaunchTask": "npm: build",
+            "args": [
+                "/home/riftraft/image_map/input/Starfinder - Alien Archive 1.pdf",
+                "/home/riftraft/image_map/output"
+            ]
         }
     ]
 }

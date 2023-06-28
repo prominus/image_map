@@ -1,13 +1,13 @@
 import { ArgumentParser } from "argparse";
 import { GameSystem, jsonExtractor } from "./workers/json_extractor";
-import extractAllImages, { printAllImages } from "./workers/pdf_extractor";
-
-// TODO: constants will be parameters
-
-// const pdf_path = "C:/Users/Magenta/Documents/rust_webassembly/image_map/input/PZO7105E.pdf";
-// const output_path = "C:/Users/Magenta/Documents/rust_webassembly/image_map/output";
+import getPdfDafa, { printAllImages } from "./workers/pdf_extractor";
 
 const parser = new ArgumentParser({ description: "Extract some images"});
+
+interface Args {
+  pdf_path:string,
+  output_path:string
+}
 
 parser.add_argument('pdf_path', {
   type: 'string',
@@ -18,18 +18,22 @@ parser.add_argument('output_path', {
   help: "The output folder",
 });
 
-let args = parser.parse_args();
+let args: Args = parser.parse_args();
 
-async function main(args: any) {
+async function main(args: Args) {
   try {
-    // TODO: title should be gathered from pdf
-    const pdf_title = "PZ07105E.pdf"
+    // Get PDF
+    let pdf_data = await getPdfDafa(args.pdf_path);
+    
+    // Get Schema
+    let json_schema = jsonExtractor(GameSystem.Starfinder, pdf_data.title);
+    if (json_schema === undefined) {
+        console.log("schema not found");
+        return;
+    }
 
-    let images = await extractAllImages(pdf_path);
-
-    let json_schema = jsonExtractor(GameSystem.Starfinder, "Alien Archive 1");
-    console.log(json_schema);
-    await printAllImages(output_path, images);
+    // TODO: determine what images to save
+    // await printAllImages(args.output_path, images);
   } catch (error) {
     console.log(`Error running main: ${error}`);
   }

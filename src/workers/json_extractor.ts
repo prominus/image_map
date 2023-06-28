@@ -72,7 +72,7 @@ export function jsonExtractor(system: GameSystem, doc_name: string) {
  * @returns The JSON file schema if found
  */
 function starfinderFactory(doc_name: string)  {
-    return starfinder_list.find(schema => schema.title == doc_name);
+    return starfinder_list.find(schema => schema.title === doc_name);
 }
 
 /**
@@ -81,7 +81,7 @@ function starfinderFactory(doc_name: string)  {
  * @returns The JSON file schema if found
  */
 function dndFactory(doc_name: string) {
-    return dnd_list.find(schema => schema.title == doc_name);
+    return dnd_list.find(schema => schema.title === doc_name);
 }
 
 /**
@@ -90,7 +90,7 @@ function dndFactory(doc_name: string) {
  * @returns The JSON file schema if found
  */
 function pathfinder1Factory(doc_name:string) {
-    return pathfinder1_list.find(schema => schema.title == doc_name);
+    return pathfinder1_list.find(schema => schema.title === doc_name);
 }
 
 /**
@@ -99,7 +99,7 @@ function pathfinder1Factory(doc_name:string) {
  * @returns The JSON file schema if found
  */
 function pathfinder2Factory(doc_name:string) {
-    return pathfinder2_list.find(schema => schema.title == doc_name);
+    return pathfinder2_list.find(schema => schema.title === doc_name);
 }
 
 // TODO: Add other gaming system factories
