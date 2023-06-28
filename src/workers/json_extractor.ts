@@ -8,9 +8,9 @@
 // ..
 
 // Starfinder imports
-import alien_archive_1 from "../system_mapping/sfrpg/alien_archive1.json";
-import alien_archive_2 from "../system_mapping/sfrpg/alien_archive2.json";
-import alien_archive_3 from "../system_mapping/sfrpg/alien_archive3.json";
+import alien_archive_1 from "../system_mapping/sfrpg/alien_archive_1.json";
+import alien_archive_2 from "../system_mapping/sfrpg/alien_archive_2.json";
+import alien_archive_3 from "../system_mapping/sfrpg/alien_archive_3.json";
 
 export enum GameSystem {
     DnD5e,
@@ -23,7 +23,7 @@ export enum GameSystem {
  * Interface to provide name key for all JSON schemas
  */
 interface namedJson {
-    name: string
+    title: string
 }
 
 const dnd_list: namedJson[] = [
@@ -72,7 +72,7 @@ export function jsonExtractor(system: GameSystem, doc_name: string) {
  * @returns The JSON file schema if found
  */
 function starfinderFactory(doc_name: string)  {
-    return starfinder_list.find(schema => schema.name == doc_name);
+    return starfinder_list.find(schema => schema.title == doc_name);
 }
 
 /**
@@ -81,7 +81,7 @@ function starfinderFactory(doc_name: string)  {
  * @returns The JSON file schema if found
  */
 function dndFactory(doc_name: string) {
-    return dnd_list.find(schema => schema.name == doc_name);
+    return dnd_list.find(schema => schema.title == doc_name);
 }
 
 /**
@@ -90,7 +90,7 @@ function dndFactory(doc_name: string) {
  * @returns The JSON file schema if found
  */
 function pathfinder1Factory(doc_name:string) {
-    return pathfinder1_list.find(schema => schema.name == doc_name);
+    return pathfinder1_list.find(schema => schema.title == doc_name);
 }
 
 /**
@@ -99,7 +99,7 @@ function pathfinder1Factory(doc_name:string) {
  * @returns The JSON file schema if found
  */
 function pathfinder2Factory(doc_name:string) {
-    return pathfinder2_list.find(schema => schema.name == doc_name);
+    return pathfinder2_list.find(schema => schema.title == doc_name);
 }
 
 // TODO: Add other gaming system factories
