@@ -10,11 +10,11 @@ interface Args {
 }
 
 parser.add_argument('pdf_path', {
-  type: 'string',
+  type: 'str',
   help: "The absolute file path to the PDF",
 });
 parser.add_argument('output_path', {
-  type: 'string',
+  type: 'str',
   help: "The output folder",
 });
 
@@ -33,7 +33,7 @@ async function main(args: Args) {
     }
 
     // TODO: determine what images to save
-    // await printAllImages(args.output_path, images);
+    await printAllImages(args.output_path, pdf_data.images);
   } catch (error) {
     console.log(`Error running main: ${error}`);
   }

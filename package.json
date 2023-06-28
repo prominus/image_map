@@ -6,7 +6,7 @@
     "build": "rimraf dist/* && webpack build --config webpack.config.cjs"
   },
   "engines": {
-    "node": ">=16"
+    "node": ">=17"
   },
   "keywords": [],
   "author": "",
