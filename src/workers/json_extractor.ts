@@ -8,6 +8,7 @@
 // ..
 
 // Starfinder imports
+import { features } from "process";
 import alien_archive_1 from "../system_mapping/sfrpg/alien_archive_1.json";
 import alien_archive_2 from "../system_mapping/sfrpg/alien_archive_2.json";
 import alien_archive_3 from "../system_mapping/sfrpg/alien_archive_3.json";
@@ -19,26 +20,100 @@ export enum GameSystem {
     Starfinder,
 }
 
+// Interfaces for JSON files
+
 /**
- * Interface to provide name key for all JSON schemas
+ * Iterface for dictionary
+ * @property [key]: value
  */
-interface namedJson {
-    title: string
+interface iDictionary {
+    [key:string]: iImage;
 }
 
-const dnd_list: namedJson[] = [
+/**
+ * Interface for PDF document
+ * @property title - PDF title
+ * @property author - PDF Author
+ * @property creation_date - date file was created
+ * @property npc2 - monsters/non playable characters
+ */
+interface iDocument {
+    title: string;
+    author: string;
+    creation_date: string;
+    // TODO: add scene images, character images, maybe object images?
+}
+
+/**
+ * Iterface for image
+ * @property id
+ * @property orig
+ * @property icon
+ * @property additional - Other cool additional images
+ */
+interface iImage {
+    id: string;
+    orig: string;
+    icon?: string;
+    additional?: string[]
+}
+
+/**
+ * Interface for a Starfinder PDF
+ */
+interface iStarfinderDoc extends iDocument {
+    alien_archives? : iDictionary;
+    archetype_features? : iDictionary;
+    archetypes?: iDictionary;
+    characters?: iDictionary;
+    classes?: iDictionary;
+    class_features?: iDictionary;
+    conditions?: iDictionary;
+    creature_companions?: iDictionary;
+    equipment?: iDictionary;
+    feats?: iDictionary;
+    hazards?: iDictionary;
+    races?: iDictionary;
+    racial_features?: iDictionary;
+    rules?: iDictionary;
+    setting?: iDictionary;
+    spells?: iDictionary;
+    starship_actions?: iDictionary;
+    starship_components?: iDictionary;
+    starships?: iDictionary;
+    tables?: iDictionary;
+    themes?: iDictionary;
+    universal_creature_rules?: iDictionary;
+    vehicles?: iDictionary;
+}
+
+// Test the Document json
+let testJson: iDocument = {
+    title: 'test',
+    author: 'test',
+    creation_date: 'test',
+    // npc2: {
+    //     't1': {
+    //         id: '1',
+    //         orig: 'test',
+    //         icon: 'icon'
+    //     }
+    // }
+}
+
+const dnd_list: iDocument[] = [
     // TODO
 ]
 
-const pathfinder1_list: namedJson[] = [
+const pathfinder1_list: iDocument[] = [
     // TODO
 ]
 
-const pathfinder2_list: namedJson[] = [
+const pathfinder2_list: iDocument[] = [
     // TODO
 ]
 
-const starfinder_list: namedJson[] = [
+const starfinder_list: iStarfinderDoc[] = [
     alien_archive_1,
     alien_archive_2,
     alien_archive_3,
