@@ -1,6 +1,5 @@
 import { PDFDocumentProxy, PDFPageProxy, getDocument, OPS, GlobalWorkerOptions } from "pdfjs-dist";
-import sharp from "sharp";
-import ImageMap from "./image_map";
+import ImageMap from "../mapping/image_map";
 
 class PdfData{
     public images: ImageMap[];
@@ -81,21 +80,4 @@ async function getPageImages(pageNum: number, pdf: PDFDocumentProxy) {
         console.log(error);
     }
     return images;
-}
-
-/**
- * Save images to an output folder
- * @param outputFolder - Location to save the images
- * @param images - List of images to save
- */
-export async function printAllImages(outputFolder: string, images: ImageMap[]) {
-    images.forEach(async (image: ImageMap) => {
-        const file = outputFolder + `/${image.name}.png`;
-        const width = image.width;
-        const height = image.height;
-        const channels = image.channels();
-        await sharp(image.data, {
-            raw: { width, height, channels }
-        }).toFile(file);
-    });
 }

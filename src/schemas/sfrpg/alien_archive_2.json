@@ -1,8 +1,9 @@
 {
+    "$schema": "../pdf_schema.json",
+    "name": "alien_archives_2",
     "title": "Alien Archive 2",
     "author": "Copyright 2017 Paizo Inc.",
     "creation_date": "",
-    "alien_archives": {
+    "assets": {}
 
-    }
 }

@@ -1,5 +1,12 @@
+/**
+ * @param name - The image name as defined in the PDF
+ * @param width - Pixel width of the raw image
+ * @param height - Pixel height of the raw image
+ * @param data - The raw image data extracted from the PDF
+ * @param bytes
+ */
 export default class ImageMap {
-    
+
     public bytes: number;
     /**
      * 
